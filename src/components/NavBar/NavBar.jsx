@@ -4,14 +4,18 @@ import navBarStyle from "./navBar.module.css";
 
 export const NavBar = () => {
   return (
-    <nav className={navBarStyle.navContainer}>
+    <nav>
       <img src={logo} alt="cart-widget" className={navBarStyle.logo} />{" "}
-      <div clasName={navBarStyle.enlaces}>
-        <button> Inicio </button> <button> Nosotros </button>{" "}
-        <button> Nuestros vinos </button> <button> Visitas </button>{" "}
-        <button> Novedades </button> <button> Contacto </button>{" "}
+      <div className={navBarStyle.enlaces}>
+        <div>
+          <button> Inicio </button> <button> Nosotros </button>{" "}
+          <button> Nuestros vinos </button> <button> Visitas </button>{" "}
+          <button> Novedades </button> <button> Contacto </button>{" "}
+        </div>{" "}
+        <div className={navBarStyle.cartWidget}>
+          <CartWidget> </CartWidget>{" "}
+        </div>{" "}
       </div>{" "}
-      <CartWidget> </CartWidget>{" "}
     </nav>
   );
 };
