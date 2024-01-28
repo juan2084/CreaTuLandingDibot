@@ -1,0 +1,7 @@
+.h1 {
+    font-weight: 800;
+    font-size: 50px;
+    text-align: center;
+    color-scheme: light dark;
+    color: rgba(40, 78, 212, 0.87);
+}
