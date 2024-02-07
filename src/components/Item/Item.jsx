@@ -9,7 +9,8 @@ export const Item = ({id, name, img, price, stock}) => {
             </h2>
         </header>
         <picture>
-            <img alt="name" className="ItemImg"/>
+            <source srcSet={img} type="image/png" />
+            <img src={img} alt="name" className="ItemImg"/>
         </picture>
         <section>
             <p className="Info">
