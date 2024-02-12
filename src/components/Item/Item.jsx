@@ -1,3 +1,4 @@
+import itemStyles from "./item.module.css"
 
 export const Item = ({id, name, img, price, stock}) => {
 
@@ -10,7 +11,7 @@ export const Item = ({id, name, img, price, stock}) => {
         </header>
         <picture>
             <source srcSet={img} type="image/png" />
-            <img src={img} alt="name" className="ItemImg"/>
+            <img src={img} alt="name" className={itemStyles.image}/>
         </picture>
         <section>
             <p className="Info">

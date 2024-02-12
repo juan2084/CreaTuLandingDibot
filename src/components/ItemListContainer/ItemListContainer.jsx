@@ -4,8 +4,6 @@ import { getProducts } from "../../asyncMock";
 import ItemList from "../ItemList/ItemList";
 
 
-
-
 export const ItemListContainer = ({ greeting }) => {
 
 const [products, setProducts] = useState([])
