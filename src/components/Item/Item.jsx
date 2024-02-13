@@ -22,7 +22,7 @@ export const Item = ({id, name, img, price, stock}) => {
             </p>
         </section>
         <footer className="ItemFooter">
-                <button className="Option">Ver detalle</button>
+                <button className={itemStyles.Button}>Ver detalle</button>
         </footer>
 
     </article>

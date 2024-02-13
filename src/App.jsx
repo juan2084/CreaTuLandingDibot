@@ -4,6 +4,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemCount from "./components/ItemCount/ItemCount"; 
 import AppStyle from "./app.module.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <div className={AppStyle.App}>
       <NavBar />
       <ItemListContainer greeting={"Bienvenidos"}/>
-      <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('Cantidad agregada', quantity)}/>
+      <ItemDetailContainer/>
     </div>
   );
 }
