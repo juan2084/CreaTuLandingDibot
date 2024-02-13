@@ -3,15 +3,15 @@ import itemStyles from "./item.module.css"
 export const Item = ({id, name, img, price, stock}) => {
 
   return (
-    <article className="CardItem">
+    <article className={itemStyles.CardItem}>
         <header className="Header">
-            <h2 className="ItemHeader">
+            <h2 className={itemStyles.ItemHeader}>
                 {name}
             </h2>
         </header>
         <picture>
             <source srcSet={img} type="image/png" />
-            <img src={img} alt="name" className={itemStyles.image}/>
+            <img src={img} alt="name" className={itemStyles.Image}/>
         </picture>
         <section>
             <p className="Info">
