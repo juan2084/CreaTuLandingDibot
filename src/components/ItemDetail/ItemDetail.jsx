@@ -1,7 +1,7 @@
 import ItemCount from "../ItemCount/ItemCount";
 import stylesItemDetail from "./itemDetail.module.css"
 
-export const ItemDetail = ({name, img, category, description, price}) => {
+export const ItemDetail = ({name, img, category, description, price, age}) => {
   return (
     <article className={stylesItemDetail.CardItemDetail}>
         <header className="Header">
@@ -22,6 +22,9 @@ export const ItemDetail = ({name, img, category, description, price}) => {
             </p>
             <p className="Info">
                 Precio: ${price}            
+            </p>
+            <p className="Info">
+                Año: {age}            
             </p>
         </section>
         <footer className="ItemFooter">

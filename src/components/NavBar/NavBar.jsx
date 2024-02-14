@@ -16,6 +16,7 @@ export const NavBar = () => {
           <NavLink className={navBarStyle.enlace} to={"/Category/Gran Reserva"}>Gran Reserva</NavLink>{" "}
           <NavLink className={navBarStyle.enlace} to={"/Category/Reserva"}>Reserva</NavLink>{" "}
         </div>{" "}
+        <NavLink className={navBarStyle.enlace} to="/">Nosotros</NavLink>
         <div className={navBarStyle.cartWidget}>
           <CartWidget> </CartWidget>{" "}
         </div>{" "}
