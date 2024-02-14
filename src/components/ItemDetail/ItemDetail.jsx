@@ -1,7 +1,7 @@
 import ItemCount from "../ItemCount/ItemCount";
 import stylesItemDetail from "./itemDetail.module.css"
 
-export const ItemDetail = ({id, name, img, category, description, price, stock}) => {
+export const ItemDetail = ({name, img, category, description, price}) => {
   return (
     <article className={stylesItemDetail.CardItemDetail}>
         <header className="Header">

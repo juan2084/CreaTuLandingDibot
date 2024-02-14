@@ -1,18 +1,24 @@
-import { useState } from "react";
+
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import ItemCount from "./components/ItemCount/ItemCount"; 
 import AppStyle from "./app.module.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
 function App() {
   return (
     <div className={AppStyle.App}>
-      <NavBar />
-      <ItemListContainer greeting={"Bienvenidos"}/>
-      <ItemDetailContainer/>
+      <BrowserRouter>
+        <NavBar/>
+        <Routes>
+          <Route path='/' element={<ItemListContainer/>}/>
+          <Route path='/category/:category' element={<ItemListContainer/>}/>
+          <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
+          <Route path='*' element={<h1>404 NOT FOUND</h1>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

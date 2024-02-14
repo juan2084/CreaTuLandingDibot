@@ -33,7 +33,6 @@ import ItemCountStyle from "./itemCount.module.css"
         </div>
       
     )
-
   }
 
 
