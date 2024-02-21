@@ -45,9 +45,12 @@ button:focus-visible {
 .enlaces {
     justify-content: flex-end;
     display: flex;
-    overflow: auto;
+    overflow:hidden;
     align-items: center;
+    list-style: none;
 }
+
+
 
 .cartWidget {
     margin-left: 5%;
