@@ -1,7 +1,8 @@
 .logo {
     height: 10%;
     width: 10%;
-    float: left
+    float: left;
+    margin-right: 35%;
 }
 
 button {
@@ -14,10 +15,12 @@ button {
     background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.50s;
+    
 }
 
 button:hover {
     border-color: #646cff;
+    color:#646cff;
 }
 
 button:focus,
@@ -44,7 +47,7 @@ button:focus-visible {
 
 .enlaces {
     justify-content: flex-end;
-    display: flex;
+    display: inline-flex;
     overflow:hidden;
     align-items: center;
     list-style: none;
@@ -54,22 +57,4 @@ button:focus-visible {
 
 .cartWidget {
     margin-left: 5%;
-}
-
-
-.enlace {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1.4em;
-    font-weight: 300;
-    font-family: inherit;
-    cursor: pointer;
-    transition: border-color 0.50s;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.enlace:hover {
-    color: black;
 }

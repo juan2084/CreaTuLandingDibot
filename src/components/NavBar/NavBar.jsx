@@ -6,31 +6,26 @@ import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
   return (
-    <nav>
+    <nav className={navBarStyle.enlaces}>
       <img src={logo} alt="cart-widget" className={navBarStyle.logo} />{" "}
-      <ul className={navBarStyle.enlaces}>
-        <li>
-          <NavLink to="/" className={navBarStyle.enlace}> 
-            Inicio </NavLink> {" "}
-        </li>  
-        <li>
-          <NavLink className={navBarStyle.enlace} to={"/Category/Vino espumante"}>Vino espumante</NavLink>{" "} 
-        </li>
-        <li>
-          <NavLink className={navBarStyle.enlace} to={"/Category/Gran Reserva"}>Gran Reserva</NavLink>{" "}
-        </li>
-        <li>
-          <NavLink className={navBarStyle.enlace} to={"/Category/Reserva"}>Reserva</NavLink>{" "}
-        </li>
-        <li>
-          <NavLink className={navBarStyle.enlace} to="/">Nosotros</NavLink>
-        </li>
-        <li className={navBarStyle.cartWidget}>
-          <NavLink to='/cart'>
+          <NavLink to="/">
+              <button>Inicio</button> 
+          </NavLink>
+          <NavLink to={"/Category/Vino espumante"}>
+              <button>Vino espumante</button>
+          </NavLink>
+          <NavLink to={"/Category/Gran Reserva"}>
+              <button>Gran Reserva</button>
+          </NavLink>
+          <NavLink to={"/Category/Reserva"}>
+              <button>Reserva</button>
+          </NavLink> 
+          <NavLink to="/">
+              <button>Nosotros</button>
+          </NavLink>
+          <NavLink to='/cart' className={navBarStyle.cartWidget}>
             <CartWidget> </CartWidget>
           </NavLink>
-        </li>
-      </ul>
     </nav>
   );
 };

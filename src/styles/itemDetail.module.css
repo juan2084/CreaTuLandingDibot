@@ -5,12 +5,13 @@
  
  .CardItemDetail{
     margin-top: 10%;
+    margin-bottom: 5%;
     background-color: white;
     margin-left: auto;
     margin-right: auto;
     border: 5px solid darkblue;
     height: 640px;
-    width: 800px;
+    width: 700px;
  }
  
  .ItemHeaderDetail{
