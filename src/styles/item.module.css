@@ -1,0 +1,29 @@
+.Image{
+   width: 200px;
+   height: 240px;
+}
+
+.CardItem{
+   margin-top: 10%;
+   background-color: white;
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-bottom: 5%;
+   border: 5px solid darkblue;
+   height: 450px;
+   width: 350px;
+}
+
+.ItemHeader{
+   font-weight: 800;
+   font-size: 25px;
+   font-style: normal;
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   color: #000108;
+}
+
+.link{
+   color: rgb(26, 8, 224);
+   background-color: rgb(155, 127, 255);
+}
+

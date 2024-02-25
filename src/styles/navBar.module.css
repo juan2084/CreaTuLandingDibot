@@ -1,7 +1,8 @@
 .logo {
     height: 10%;
     width: 10%;
-    float: left
+    float: left;
+    margin-right: 35%;
 }
 
 button {
@@ -14,10 +15,12 @@ button {
     background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.50s;
+    
 }
 
 button:hover {
     border-color: #646cff;
+    color:#646cff;
 }
 
 button:focus,
@@ -44,10 +47,13 @@ button:focus-visible {
 
 .enlaces {
     justify-content: flex-end;
-    display: flex;
-    overflow: auto;
+    display: inline-flex;
+    overflow:hidden;
     align-items: center;
+    list-style: none;
 }
+
+
 
 .cartWidget {
     margin-left: 5%;
