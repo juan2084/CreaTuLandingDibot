@@ -73,27 +73,44 @@ const products = [
 ]
 
 export const getProducts = () => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(products)
-           }, 500)
+    return new Promise((resolve, reject) => {
+        if(products.length > 0){
+            setTimeout(() => {
+                resolve(products)
+               }, 2000);
+        } else {
+            reject("No hay productos");
+        }
     }) 
 }
 
 
 export const getProductById = (productId) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(products.find(prod => prod.id === productId))
-           }, 500)
+    return new Promise((resolve, reject) => {
+        if(products.length > 0){
+            const product = products.find(prod => prod.id === productId);
+            setTimeout(() => {
+                if(!product){
+                    reject(`No se encuentra el producto con el id ${productId}`);
+                } else{
+                    resolve(product);
+                }
+            }, 2000);
+        } else {
+            reject("No hay productos");
+        }
     }) 
 }
 
 
 export const getProductsByCategory = (category) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(products.filter(prod => prod.category === category))
-           }, 500)
+    return new Promise((resolve, reject) => {
+        if(products.length > 0){
+            setTimeout(() => {
+                resolve(products.filter(prod => prod.category === category))
+            }, 2000)
+        } else {
+            reject("No hay productos");
+        }
     }) 
 }
