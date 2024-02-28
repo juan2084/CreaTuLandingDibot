@@ -8,7 +8,7 @@ export const ItemDetailContainer = () => {
     const [product, setProduct] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
-    const{itemId} = useParams()
+    const{itemId} = useParams();
 
     useEffect(() => {
       getProductById(itemId)
