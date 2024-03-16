@@ -23,9 +23,6 @@ export const NavBar = () => {
           <NavLink to="/ourFamily">
               <button className={navBarStyle.button}>Nosotros</button>
           </NavLink>
-          <NavLink to='/contact'>
-              <button className={navBarStyle.button}>Contacto</button>
-          </NavLink>
           <NavLink to='/cart' className={navBarStyle.cartWidget}>
             <CartWidget> </CartWidget>
           </NavLink>

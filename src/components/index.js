@@ -8,4 +8,3 @@ export * from "./ItemListContainer/ItemListContainer";
 export * from "./NavBar/NavBar";
 export * from "./Cart/Cart";
 export * from "./OurFamily/OurFamily";
-export * from "./Contact/Contact";

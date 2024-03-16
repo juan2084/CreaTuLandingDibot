@@ -1,17 +1,16 @@
 import { createContext, useEffect, useState } from "react";
+import Swal from "sweetalert2";
+
 
 export const CartContext = createContext({
   cart: []
 })
 
 
-
 export const CartProvider= ({children}) => {
     const [cart, setCart] = useState([]);
-
-    console.log(cart);
-
-    const [totalItems, setTotalItems] = useState();
+    const [totalItems, setTotalItems] = useState(0);
+    const [total, setTotal] = useState(0);
 
     const addItem = (item, quantity) => {
         // Copio del cart
@@ -39,29 +38,49 @@ export const CartProvider= ({children}) => {
     const removeItem = (itemId) => {
         const cartUpdated = cart.filter(prod => prod.id !== itemId)
         setCart(cartUpdated)
+
+        Swal.fire({
+            icon: "danger",
+            title: "Se eliminó el producto del carrito"
+        })
     };
 
     const clearCart = () => {
         // Limpiar el carrito
         setCart([])
+
+        Swal.fire({
+            icon: "danger",
+            title: "El carrito se ha vaciado"
+        })
+
+
     };
 
     const isInCart = (itemId) => {
         return cart.some(prod => prod.id === itemId)
     };
 
-    const hanldeTotalItems = () => {
+    const handleTotalItems = () => {
         const newTotalItems = cart.reduce((acum, item) => acum + item.quantity, 0);
         setTotalItems(newTotalItems);
     }
 
+    const handleTotal = () => {
+        const newTotal = cart.reduce((acum, item) => acum + item.price * item.quantity, 0);
+        setTotal(newTotal);
+    }
+
+
     useEffect(() => {
-        hanldeTotalItems()
+        handleTotalItems();
+        handleTotal();
     }, [cart])
 
     const objectValues = {
         cart, 
         totalItems,
+        total,
         addItem, 
         removeItem, 
         clearCart

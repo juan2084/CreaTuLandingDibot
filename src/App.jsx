@@ -3,7 +3,8 @@ import AppStyle from "./app.module.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CartProvider, CartContext } from "./context/CartContext";
-import {Cart, ItemDetailContainer, ItemListContainer, NavBar, OurFamily, Contact} from "./components/index.js"
+import {Cart, ItemDetailContainer, ItemListContainer, NavBar, OurFamily} from "./components/index.js"
+import CheckOut from "./components/CheckOut/CheckOut.jsx";
 
 
 function App() {
@@ -18,8 +19,8 @@ function App() {
                 <Route path='/category/:category' element={<ItemListContainer/>}/>
                 <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
                 <Route path='/cart' element={<Cart/>}/>
+                <Route path='/checkout' element={<CheckOut/>}/>
                 <Route path='/ourFamily' element={<OurFamily/>}/>
-                <Route path='/contact' element={<Contact/>}/>
                 <Route path='*' element={<h1>404 NOT FOUND</h1>}/>
               </Routes>
           </BrowserRouter>
