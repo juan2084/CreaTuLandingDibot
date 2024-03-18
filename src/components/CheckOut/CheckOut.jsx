@@ -1,11 +1,12 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CartContext from "../../context/CartContext";
 import { db }from "../../config/firebaseConfig";
+import Swal from "sweetalert2";
 
 export const CheckOut = () => {
 
-const {cart, total, clearCart} = CartContext
+const {cart, total, clearCart} = useContext(CartContext)
 
 const [formCheckout, setFormCheckout] = useState({
     name: "",
@@ -45,8 +46,16 @@ const handleSubmit = async(e) => {
         date: serverTimestamp()
     }
 
+    Swal.fire({
+        icon: "success",
+        title: "Su compra se realizó correctamente"
+    })
+
+
     // Agrega una nueva orden de compra en Firebase
     const order = await addDoc(collection( db, "orders" ), newOrder);
+
+  
 
     // Vaciar el formulario
     setFormCheckout({
@@ -71,11 +80,11 @@ const handleSubmit = async(e) => {
     <div className="container d-flex justify-content-center m-5">
         <form onSubmit={handleSubmit}>
             <label htmlFor="">Nombre</label>
-            <input type="text" className="form-control" onChange={handleName}/>
+            <input type="text" className="form-control" value={formCheckout.name} onChange={handleName}/>
             <label htmlFor="">Teléfono</label>
-            <input type="number" className="form-control" onChange={handlePhone}/>
+            <input type="number" className="form-control" value={formCheckout.phone}  onChange={handlePhone}/>
             <label htmlFor="">Email</label>
-            <input type="email" className="form-control" onChange={handleEmail}/>
+            <input type="email" className="form-control" value={formCheckout.email} onChange={handleEmail}/>
             <input type="submit" className="mt-3 btn btn-success" value="Terminar compra"/>
         </form>
     </div>

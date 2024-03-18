@@ -53,8 +53,6 @@ export const CartProvider= ({children}) => {
             icon: "danger",
             title: "El carrito se ha vaciado"
         })
-
-
     };
 
     const isInCart = (itemId) => {
