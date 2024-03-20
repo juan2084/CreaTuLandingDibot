@@ -1,0 +1,40 @@
+ .h4{
+    color:blue;
+    font-style:normal;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
+    font-size: 30px;
+    text-align: justify;
+    margin-left: 10%;
+    margin-right: 10%;
+ }
+
+ .h2{
+    margin-top: 5%;
+    font-size: 40px;
+    font-style: normal;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #000108;
+ }
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.50s; 
+}
+
+button:hover {
+    border-color: #646cff;
+    color:#646cff;
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}

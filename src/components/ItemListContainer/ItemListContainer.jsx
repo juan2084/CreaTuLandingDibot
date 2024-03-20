@@ -14,9 +14,6 @@ export const ItemListContainer = ({ greeting }) => {
 
   const getProductsDB = (category) => {  
     // Referencia a la colección products de la base de datos 
-    //const myProducts = collection(db, "products");
-    //const myProducts = category ? query( collection(db, "products"), where('category','==',category)) : collection(db, "products")
-
     const myProducts = category ? query(collection(db, "products"), where( "category", "==", category)) : collection(db, "products")
 
 

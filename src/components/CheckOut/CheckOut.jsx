@@ -3,10 +3,12 @@ import { useContext, useState } from "react";
 import CartContext from "../../context/CartContext";
 import { db }from "../../config/firebaseConfig";
 import Swal from "sweetalert2";
+import styles from "/src/styles/checkOut.module.css";
+import { jsPDF } from "jspdf";
 
 export const CheckOut = () => {
 
-const {cart, total, clearCart} = useContext(CartContext)
+const {cart, total, totalItems, clearCart} = useContext(CartContext)
 
 const [formCheckout, setFormCheckout] = useState({
     name: "",
@@ -14,7 +16,10 @@ const [formCheckout, setFormCheckout] = useState({
     email: ""
 });
 
-const [orderId, setOrderId] = useState();
+const [order, setOrder] = useState(null);
+const [totalItemsCart, setTotalItemsCart] = useState(0);
+
+
 
 const handleName = (e) => {
     setFormCheckout({
@@ -55,7 +60,10 @@ const handleSubmit = async(e) => {
     // Agrega una nueva orden de compra en Firebase
     const order = await addDoc(collection( db, "orders" ), newOrder);
 
-  
+    setOrder({ id: order.id, ...newOrder });
+
+    setTotalItemsCart(totalItems);
+
 
     // Vaciar el formulario
     setFormCheckout({
@@ -64,17 +72,39 @@ const handleSubmit = async(e) => {
         email: ""
     })
 
-
     // Vaciar el carrito
     clearCart();
 
-    // Setear la orden ID
-    setOrderId(order.id);
 };
 
-    if(orderId){
-        return <h3>Su ID de orden de compra es {orderId}</h3>
-    }
+    const generarPDF = () => {
+        const doc = new jsPDF();
+
+        // Encabezado de la factura
+        doc.text('Factura', 95, 20);
+        doc.text(`Número de factura: ${order.id}`, 10, 30);
+        doc.text(`Cliente: ${order.buyer.name}`, 10, 40);
+        doc.text(`Teléfono: ${order.buyer.phone}`, 10, 50);
+        doc.text(`Cantidad de productos: ${totalItemsCart}`, 10, 60);
+        doc.text(`Precio Total: ${order.total}`, 10, 70);
+
+        // Guardar el pdf con un nombre específico
+        doc.save(`factura_${order.id}.pdf`);
+    };
+
+
+    if(order){
+        return (
+            <>
+                <h2 className={styles.h2}>FACTURA</h2>
+                <h4 className={styles.h4}>Número de factura: {order.id}</h4>
+                <h4 className={styles.h4}>Cliente: {order.buyer.name}</h4>
+                <h4 className={styles.h4}>Teléfono: {order.buyer.phone}</h4>
+                <h4 className={styles.h4}>Cantidad de productos: {totalItemsCart}</h4>
+                <h4 className={styles.h4}>Precio Total: {order.total}</h4>
+                <button onClick={generarPDF}>Generar PDF</button>
+            </>
+    )}
 
   return (
     <div className="container d-flex justify-content-center m-5">

@@ -40,7 +40,7 @@ export const CartProvider= ({children}) => {
         setCart(cartUpdated)
 
         Swal.fire({
-            icon: "danger",
+            icon: "success",
             title: "Se eliminó el producto del carrito"
         })
     };
@@ -50,7 +50,7 @@ export const CartProvider= ({children}) => {
         setCart([])
 
         Swal.fire({
-            icon: "danger",
+            icon: "success",
             title: "El carrito se ha vaciado"
         })
     };
