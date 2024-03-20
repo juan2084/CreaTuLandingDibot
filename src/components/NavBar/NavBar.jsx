@@ -9,19 +9,19 @@ export const NavBar = () => {
     <nav className={navBarStyle.enlaces}>
       <img src={logo} alt="cart-widget" className={navBarStyle.logo} />{" "}
           <NavLink to="/">
-              <button>Inicio</button> 
+              <button className={navBarStyle.button}>Inicio</button> 
           </NavLink>
           <NavLink to={"/Category/Vino espumante"}>
-              <button>Vino espumante</button>
+              <button className={navBarStyle.button}>Espumante</button>
           </NavLink>
           <NavLink to={"/Category/Gran Reserva"}>
-              <button>Gran Reserva</button>
+              <button className={navBarStyle.button}>Gran Reserva</button>
           </NavLink>
           <NavLink to={"/Category/Reserva"}>
-              <button>Reserva</button>
+              <button className={navBarStyle.button}>Reserva</button>
           </NavLink> 
-          <NavLink to="/">
-              <button>Nosotros</button>
+          <NavLink to="/ourFamily">
+              <button className={navBarStyle.button}>Nosotros</button>
           </NavLink>
           <NavLink to='/cart' className={navBarStyle.cartWidget}>
             <CartWidget> </CartWidget>

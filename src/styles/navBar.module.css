@@ -9,13 +9,12 @@ button {
     border-radius: 8px;
     border: 1px solid transparent;
     padding: 0.6em 1.2em;
-    font-size: 1em;
+    font-size: 0.9rem;
     font-weight: 300;
     font-family: inherit;
     background-color: #1a1a1a;
     cursor: pointer;
-    transition: border-color 0.50s;
-    
+    transition: border-color 0.50s; 
 }
 
 button:hover {
@@ -39,7 +38,7 @@ button:focus-visible {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    max-width: 1280px;
+    max-width: 1300px;
     margin: auto;
     padding: 2rem;
     text-align: center;
@@ -52,7 +51,6 @@ button:focus-visible {
     align-items: center;
     list-style: none;
 }
-
 
 
 .cartWidget {

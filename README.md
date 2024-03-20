@@ -1,8 +1,18 @@
-# React + Vite
+# Proyecto Final del Curso React JS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+###### El objetivo del curso es aprender a desarrollar una web dinámica, utilizando tecnologías como React JS, aprendiendo herramientas de react y nuevos conceptos como son promises, routing, estados, hooks entre otros.
 
-Currently, two official plugins are available:
+### Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React JS
+- npm
+- React Router Dom
+- Sweet Alert2
+- jsPDF
+- Firebase
+- Bootstrap
+
+### Datos de contacto
+
+email: juandibot@gmail.com
+LinkedIn: https://www.linkedin.com/in/juan-dibot/

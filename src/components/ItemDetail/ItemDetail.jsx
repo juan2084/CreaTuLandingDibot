@@ -3,11 +3,12 @@ import stylesItemDetail from "/src/styles/itemDetail.module.css"
 import { CartContext } from "../../context/CartContext";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export const ItemDetail = ({id, name, img, category, description, price, age, stock}) => {
   const [quantityAdded, setquantityAdded] = useState(0)
   
-  const {addItem} = useContext(CartContext)
+  const {addItem} = useContext(CartContext);
   
   const handleOndAdd = (quantity) => {
     setquantityAdded(quantity)
@@ -17,6 +18,11 @@ export const ItemDetail = ({id, name, img, category, description, price, age, st
     }
 
     addItem(item, quantity)
+
+    Swal.fire({
+        icon: "success",
+        title: "Se agregó el producto al carrito"
+    })
   }
 
 
@@ -48,7 +54,9 @@ export const ItemDetail = ({id, name, img, category, description, price, age, st
         <footer className="ItemFooter">
             {
                 quantityAdded > 0 ? (
-                    <Link to='/cart' className='Option'>Terminar compra</Link>
+                    <Link to='/cart' className='Option'>
+                        <button className="mt-3 btn btn-success">Ir al carrito</button>
+                    </Link>
                 ): (
                     <ItemCount initial={1} stock={stock} onAdd={handleOndAdd}/>
                 )
